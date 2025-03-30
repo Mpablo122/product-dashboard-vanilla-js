@@ -7,7 +7,7 @@ function fetchProductsThen() {
       })
       .catch(error => console.error('Error fetching products:', error));
   }
-   // Task 3 Fetch Products with async/await
+   // Task 3 Fetch Products with async/awai
   async function fetchProductsAsync() {
     try {
       const response = await fetch('https://www.course-api.com/javascript-store-products');
