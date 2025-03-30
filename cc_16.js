@@ -37,7 +37,7 @@ function fetchProductsThen() {
   function handleError(error) {
     console.error('Error fetching products:', error);
   }
-  
+  // Task 6: Call Your Fetch Functions
   fetchProductsThen();
   fetchProductsAsync();
   
