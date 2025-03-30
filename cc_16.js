@@ -33,7 +33,7 @@ function fetchProductsThen() {
         container.appendChild(productElement);
       });
     }
-  
+  // Task 5 reusable error handler 
   function handleError(error) {
     console.error('Error fetching products:', error);
   }
