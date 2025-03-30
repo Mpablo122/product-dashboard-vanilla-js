@@ -7,7 +7,7 @@ function fetchProductsThen() {
       })
       .catch(error => console.error('Error fetching products:', error));
   }
-   // Task 3 Fetch Products with async/awai
+   // Task 3 Fetch Products with async/await
   async function fetchProductsAsync() {
     try {
       const response = await fetch('https://www.course-api.com/javascript-store-products');
@@ -17,22 +17,22 @@ function fetchProductsThen() {
       handleError(error);
     }
   }
-  
+  //Task 4 Display the Products
   function displayProducts(products) {
     const container = document.getElementById('product-container');
     container.innerHTML = '';
     
-    products.forEach(product => {
-      const productElement = document.createElement('div');
-      productElement.classList.add('product');
-      productElement.innerHTML = `
-        <img src="${product.fields.image[0].url}" alt="${product.fields.name}">
-        <h2>${product.fields.name}</h2>
-        <p>$${product.fields.price / 100}</p>
-      `;
-      container.appendChild(productElement);
-    });
-  }
+    products.slice(0, 5).forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        productElement.innerHTML = `
+          <img src="${product.fields.image[0].url}" alt="${product.fields.name}">
+          <h2>${product.fields.name}</h2>
+          <p>$${(product.fields.price / 100).toFixed(2)}</p>
+        `;
+        container.appendChild(productElement);
+      });
+    }
   
   function handleError(error) {
     console.error('Error fetching products:', error);
